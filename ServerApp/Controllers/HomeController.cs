@@ -1,16 +1,17 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ServerApp.Models;
+using System.Linq;
 
 namespace ServerApp.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private DataContext context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(DataContext ctx)
     {
-        _logger = logger;
+        context = ctx;
     }
 
     public IActionResult Index()

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Repository } from './models/repository';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  constructor(private repo: Repository) {}
 }
